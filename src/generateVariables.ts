@@ -6,6 +6,8 @@ const generateVariables = () => {
         const variableName = variable.getAttribute("name")
         const variableContent = variable.innerHTML
 
+        console.log(variable.parentElement.tagName)
+
         for (let i = 0; i < bannedChars.length; i++) {
             if (variableName.includes(bannedChars[i])) return pamlErr(`Variable name ${variableName} uses banned character (${bannedChars[i]}).`)
         }
