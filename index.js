@@ -197,4 +197,4 @@ generateFors();
 generateIfs();
 generateFunctions();
 generateVariables();
-//# sourceMappingURL=paml.js.map
+//# sourceMappingURL=index.js.map
