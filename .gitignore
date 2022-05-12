@@ -1,2 +1,4 @@
-*.js*
-test/
+*.js* # Ignore Output JS Files
+
+# Ignore Test Files
+test/*.html
