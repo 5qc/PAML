@@ -1,25 +1,28 @@
 {
-  "name": "paml",
-  "version": "1.0.0",
-  "description": "Perfectly Awesome Markup Language",
-  "main": "paml.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/5qc/PAML.git"
-  },
-  "keywords": [
-    "html"
-  ],
-  "author": "5qc",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/5qc/PAML/issues"
-  },
-  "homepage": "https://github.com/5qc/PAML#readme"
+    "name": "paml",
+    "version": "1.1.0",
+    "description": "Perfectly Awesome Markup Language",
+    "main": "paml.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/5qc/PAML.git"
+    },
+    "keywords": [
+        "html",
+        "typescript",
+        "ts",
+        "html-extension"
+    ],
+    "author": "5qc",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/5qc/PAML/issues"
+    },
+    "homepage": "https://github.com/5qc/PAML#readme"
 }
