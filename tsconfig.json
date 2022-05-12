@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "./paml.js",
+        "sourceRoot": "./",
+        "rootDir": "./",
+        "sourceMap": true
+    },
+    "include": [
+        "./src/generateVariables.ts",
+        "./base/*.ts",
+        "./src/*.ts",
+        "./paml.ts"
+    ]
+}
