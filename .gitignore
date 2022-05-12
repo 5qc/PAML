@@ -1,5 +1,4 @@
 *.js* # Ignore Output JS Files
 
 # Ignore Test Files
-test/
 test/*.html
