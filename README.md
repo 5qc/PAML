@@ -11,6 +11,7 @@
   - [Variables](#variables)
   - [If Statements](#if-statements)
   - [For Loops](#for-loops)
+- [Credits](#credits)
 
 # Intro
 This is the official respository for PAML (Perfectly Awesome Markup Language), a TypeScript-based HTML add-on that adds much more to HTML, such as if statements and variables!
@@ -77,3 +78,10 @@ And that should output:
 3 l
 4 o
 ```
+
+# Credits
+Created by 5qc (roc0ast3r).
+- [YouTube](https://youtube.com/roc0ast3r)
+- [Twitter](https://twitter.com/roc0ast3r)
+- [Instagram](https://instagram.com/roc0ast3r)
+- [GitHub](https://github.com/5qc)
