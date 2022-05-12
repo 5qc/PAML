@@ -1,1 +1,1 @@
-const exmlErr = (text: string) => console.error(`[EXML] ${text}`)
+const pamlErr = (text: string) => console.error(`[PAML] ${text}`)
