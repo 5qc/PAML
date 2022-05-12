@@ -1,6 +1,4 @@
 const generateVariables = () => {
-    const bannedChars = ["{", "}", ".", ","]
-
     const variables = {}
     const variablesEl = document.querySelectorAll("set")
     for (let i = 0; i < variablesEl.length; i++) {
@@ -9,7 +7,7 @@ const generateVariables = () => {
         const variableContent = variable.innerHTML
 
         for (let i = 0; i < bannedChars.length; i++) {
-            if (variableName.includes(bannedChars[i])) return exmlErr(`Variable name ${variableName} uses banned character (${bannedChars[i]}).`)
+            if (variableName.includes(bannedChars[i])) return pamlErr(`Variable name ${variableName} uses banned character (${bannedChars[i]}).`)
         }
 
         variables[variableName] = variableContent
