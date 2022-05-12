@@ -1,3 +1,4 @@
 generateFors()
 generateIfs()
+generateFunctions()
 generateVariables()
