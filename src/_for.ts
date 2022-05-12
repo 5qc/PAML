@@ -1,4 +1,4 @@
-function generateFors() {
+const generateFors = () => {
     const forTags = document.querySelectorAll("for")
     for (let i = 0; i < forTags.length; i++) {
         const forTag = forTags[i]
