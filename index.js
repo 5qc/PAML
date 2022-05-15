@@ -17,7 +17,7 @@ const generateVariables = () => {
 };
 const bannedChars = ["{", "}", "."];
 const pamlErr = (text) => console.error(`[PAML] ${text}`);
-function generateDate() {
+const generateDate = () => {
     const getFormat = (format, d) => {
         const hasZero = (num) => {
             if (num < 10)
@@ -81,7 +81,7 @@ function generateDate() {
             date.innerHTML = String(a());
         }
     }
-}
+};
 const generateFors = () => {
     const forTags = document.querySelectorAll("for");
     for (let i = 0; i < forTags.length; i++) {
@@ -273,10 +273,31 @@ const generateFunctions = () => {
             return `{{${varName}}}`;
     });
 };
+function getSpan() {
+    const spanTags = document.querySelectorAll("span");
+    for (let i = 0; i < spanTags.length; i++) {
+        const spanTag = spanTags[i];
+        let style = "";
+        if (spanTag.getAttribute("color")) {
+            style += `color:${spanTag.getAttribute("color")};`;
+            spanTag.removeAttribute("color");
+        }
+        if (spanTag.getAttribute("size")) {
+            style += `font-size:${spanTag.getAttribute("size")}`;
+            spanTag.removeAttribute("size");
+        }
+        if (spanTag.getAttribute("face")) {
+            style += `font-family:${spanTag.getAttribute("face")}`;
+            spanTag.removeAttribute("face");
+        }
+        spanTag.setAttribute("style", style);
+    }
+}
 generateFors();
 generateIfs();
 generateFunctions();
 generateVariables();
 generateDate();
 getDevice();
+getSpan();
 //# sourceMappingURL=index.js.map

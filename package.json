@@ -1,6 +1,6 @@
 {
     "name": "paml",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Perfectly Awesome Markup Language",
     "main": "index.js",
     "directories": {

@@ -1,4 +1,4 @@
-function generateDate() {
+const generateDate = () => {
     const getFormat = (format, d: Date) => {
         const hasZero = (num: Number) => {
             if (num < 10) return `0${num}`
