@@ -3,7 +3,7 @@
         "target": "ES2018",
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "./paml.js",
+        "outFile": "./index.js",
         "sourceRoot": "./",
         "rootDir": "./",
         "sourceMap": true
@@ -12,6 +12,6 @@
         "./src/generateVariables.ts",
         "./base/*.ts",
         "./src/*.ts",
-        "./paml.ts"
+        "./index.ts"
     ]
 }

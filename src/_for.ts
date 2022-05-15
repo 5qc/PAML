@@ -9,23 +9,18 @@ const generateFors = () => {
 
         if (forTagVarName === "i") pamlErr("Variable name \"i\" is reserved.")
 
-        if (forTagIn.startsWith("{{") && forTagIn.endsWith("}}")) {
+        const forTagInEl = document.querySelector(forTagIn)
+        const forTagEachEl = forTagInEl.querySelectorAll(forTagEach)
             
-        } else {
-            const forTagInEl = document.querySelector(forTagIn)
-            const forTagEachEl = forTagInEl.querySelectorAll(forTagEach)
+        forTag.innerHTML = ""
+        for (let a = 0; a < forTagEachEl.length; a++) {
+            const aa = forTagEachEl[a]
+            let ab = forContent
+            let ac = RegExp(`{{${forTagVarName}}}`, "g")
+            ab = ab.replace(/{{i}}/g, a.toString())
+            ab = ab.replace(ac, aa.innerHTML)
             
-            forTag.innerHTML = ""
-            for (let a = 0; a < forTagEachEl.length; a++) {
-                const aa = forTagEachEl[a]
-                let ab = forContent
-                let ac = RegExp(`{{${forTagVarName}}}`, "g")
-
-                ab = ab.replace(/{{i}}/g, a.toString())
-                ab = ab.replace(ac, aa.innerHTML)
-                
-                forTag.innerHTML += ab
-            }
+            forTag.innerHTML += ab
         }
     }
 }

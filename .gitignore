@@ -1,4 +1,2 @@
-*.js* # Ignore Output JS Files
-
-# Ignore Test Files
-test/*.html
+node_modules/
+test/
