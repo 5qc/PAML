@@ -28,12 +28,12 @@ Typing `paml` into the command line will automatically set to the newest version
 ## CDN
 There is also another way to install PAML, with CDN. If you want to install PAML into your website via jsDelivr, you can simply insert this HTML into your website:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/paml" defer></script>
+<script src="https://unpkg.com/paml/index.min.js" defer></script>
 ```
 
 Or if you want a specific version:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/paml@version" defer></script>
+<script src="https://unpkg.com/paml@version/index.min.js" defer></script>
 ```
 
 # Credits
