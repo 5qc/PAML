@@ -1,11 +1,11 @@
-const generateFunctions = () => {
-    const functionTags = document.querySelectorAll("function")
+const generateFunctions: Function = () => {
+    const functionTags: NodeListOf<HTMLElement> = document.querySelectorAll("function")
     
-    let functions = {}
+    let functions: Object = {}
     for (let i = 0; i < functionTags.length; i++) {
-        const functionTag = functionTags[i]
-        const functionName = functionTag.getAttribute("name")
-        const functionArgs = functionTag.getAttribute("arguments")
+        const functionTag = <HTMLElement>functionTags[i]
+        const functionName: string = functionTag.getAttribute("name")
+        const functionArgs: string = functionTag.getAttribute("arguments")
         functions[functionName] = {}
         functions[functionName]["content"] = functionTag.innerHTML
         functions[functionName]["arguments"] = functionArgs.split(" ")
@@ -14,18 +14,21 @@ const generateFunctions = () => {
 
     document.body.innerHTML = document.body.innerHTML.replace(/{{(.*?)}}/g, function(s, varName) {
         if (/\(.*?\)$/.test(varName) === true) {
-            const funcName = varName.replace(/\((.*?)\)$/, "")
-            let funcArgs = varName.replace(/(.*?)(?=\(.*?\))/, "").replace(/^\(|\)$/g, "").split(",")
+            const funcName: string = varName.replace(/\((.*?)\)$/, "")
+            let funcArgs: string[] = varName.replace(/(.*?)(?=\(.*?\))/, "").replace(/^\(|\)$/g, "").split(",")
+            
             for (let i = 0; i < funcArgs.length; i++) funcArgs[i] = funcArgs[i].trim()
-            let daFuncContent
+            
+            let daFuncContent: string
             try {
                 daFuncContent = functions[funcName]["content"]
             } catch(err) {
                 return s
             }
+            
             daFuncContent = daFuncContent.replace(/{{(.*?)}}/g, (s: String, setName: String) => {
                 for (let i = 0; i < functions[funcName]["arguments"].length; i++) {
-                    const arg = functions[funcName]["arguments"][i]
+                    const arg: string = functions[funcName]["arguments"][i]
                     if (arg === setName) {
                         return funcArgs[i]
                     }

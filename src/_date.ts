@@ -1,5 +1,5 @@
 const generateDate = () => {
-    const getFormat = (format, d: Date) => {
+    const getFormat = (format: any, d: Date) => {
         const hasZero = (num: Number) => {
             if (num < 10) return `0${num}`
             else return num

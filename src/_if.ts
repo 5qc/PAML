@@ -2,6 +2,9 @@ const generateIfs = () => {
     const getCase = (el: Element) => {
         if (el.getAttribute("exists") || el.getAttribute("exist")) return "exists"
         else if (el.getAttribute("not-exists") || el.getAttribute("notexists") || el.getAttribute("not-exist") || el.getAttribute("notexist")) return "not-exists"
+        else if (el.getAttribute("equals") || el.getAttribute("is")) return "equals"
+        else if (el.getAttribute("has-class") || el.getAttribute("hasclass")) return "has-class"
+        else if (el.getAttribute("item")) return "item" 
     }
 
     const ifTags = document.querySelectorAll("if")
@@ -92,6 +95,49 @@ const generateIfs = () => {
                     }
                 }
             }
+        } else if (ifCase === "equals") {
+            const item = document.querySelector(ifTag.getAttribute("item"))
+            if (item.innerHTML === ifTag.getAttribute("equals")) {
+                if (elseTag !== "") elseTag.remove()
+                const content = ifTag.innerHTML
+                ifTag.after(content)
+                ifTag.remove()
+            } else {
+                ifTag.remove()
+                if (elseTag !== "") {
+                    const content = elseTag.innerHTML
+                    elseTag.after(content)
+                    elseTag.remove()
+                }
+            }
+        } else if (ifCase === "has-class") {
+            const item = document.querySelector(ifTag.getAttribute("item"))
+            const classes = item.classList
+
+            let classNameExists = false
+            for (let i = 0; i < classes.length; i++) {
+                const className = classes[i]
+                if (className === ifTag.getAttribute("has-class")) {
+                    classNameExists = true
+                    break
+                }
+            }
+
+            if (classNameExists === true) {
+                if (elseTag !== "") elseTag.remove()
+                const content = ifTag.innerHTML
+                ifTag.after(content)
+                ifTag.remove()
+            } else {
+                ifTag.remove()
+                if (elseTag !== "") {
+                    const content = elseTag.innerHTML
+                    elseTag.after(content)
+                    elseTag.remove()
+                }
+            }
+        } else if (ifCase === "item") {
+            const item = document.querySelector(ifTag.getAttribute("item"))
         }
     }
 }

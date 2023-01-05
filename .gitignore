@@ -1,2 +1,7 @@
 node_modules/
 test/
+
+*.js
+*.map
+!paml.js
+!paml.js.map

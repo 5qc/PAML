@@ -8,9 +8,9 @@ const readline = require("readline")
 const rl = readline.createInterface(process.stdin, process.stdout)
 
 // Process CMD
-const args = process.argv.slice(2)
-const version = args[0]
-let url: String
+const args: string[] = process.argv.slice(2)
+const version: string = args[0]
+let url: String = ""
 
 if (version) url = `https://cdn.jsdelivr.net/npm/paml@${version}`
 else url = `https://cdn.jsdelivr.net/npm/paml`
